@@ -41,26 +41,37 @@ function Acceuil() {
   }, []);
 
   return (
-    
-        
     <div className=" flex flex-col">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-7">
-            {images.length > 0 ? images.map((image) => {
-                return <ImageWafu key={image.id + image.url } image={image} />;
-            }) : 
-            <div>
-                <h1 className="h-screen w-screen flex align-middle justify-center">Aucun contenu appuiyer pour charger</h1>
-            </div>
-            }
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-7">
+        {images.length > 0 ? (
+          images.map((image) => {
+            return <ImageWafu key={image.id + image.url} image={image} />;
+          })
+        ) : (
+          <div>
+            <h1 className="h-screen w-screen flex align-middle justify-center">
+              Aucun contenu appuiyer pour charger
+            </h1>
+          </div>
+        )}
+      </div>
       <div className="w-screen text-center  bottom-0">
-        <button type="button" onClick={loadMore} className="bg-green-500 py-4 px-5 mx-4 rounded-lg text-white">
-            Load More
+        <button
+          type="button"
+          onClick={loadMore}
+          className="bg-green-500 py-4 px-5 mx-4 rounded-lg text-white"
+        >
+          Load More
         </button>
-
+      </div>
+      <div className="visite">
+        <a href="http://www.mon-compteur.fr">
+          <img
+            src="http://www.mon-compteur.fr/html_c02genv2-79528-2"
+          />
+        </a>
       </div>
     </div>
-
   );
 }
 
